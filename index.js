@@ -4,7 +4,6 @@ function translate(str) {
     vowels.forEach(function(vowel) {
         if (str.startsWith(vowel)) {
             str = str + "way";
-            return str;
         }
     });
     return str;
