@@ -41,6 +41,21 @@ describe("translate function", () => {
         let result = translate("Tree");
         expect(result).toEqual("eetray");
     });
+
+    test("first vowel in through", () => {
+        let result = translate("through");
+        expect(result).toEqual("oughthray");
+    });
+
+    test("first vowel in play", () => {
+        let result = translate("play");
+        expect(result).toEqual("ayplay");
+    });
+
+    test("word with no vowels", () => {
+        let result = translate("my");
+        expect(result).toEqual("myay");
+    });
 });
 
 
