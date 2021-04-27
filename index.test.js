@@ -12,14 +12,24 @@ describe("translate function", () => {
         expect(result).toEqual("poppy");
     });
 
-    test("start with vowel", () => {
+    test("start with vowel a", () => {
         let result = translate("argon");
         expect(result).toEqual("argonway");
     });
 
-    test("start with vowel capital", () => {
+    test("start with vowel A capital", () => {
         let result = translate("Argon");
         expect(result).toEqual("argonway");
+    });
+
+    test("starts with e", () => {
+        let result = translate("eat");
+        expect(result).toEqual("eatway");
+    });
+
+    test("starts with u", () => {
+        let result = translate("under");
+        expect(result).toEqual("underway");
     });
 
     test("starts with consonants", () => {

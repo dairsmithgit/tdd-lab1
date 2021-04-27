@@ -1,14 +1,13 @@
 function translate(str) {
     str = str.toLowerCase();
     const vowels = ["a", "e", "i", "o", "u"];
-    for (let vowel of vowels) {
-        if (str.startsWith(vowel) === true) {
+    vowels.forEach(function(vowel) {
+        if (str.startsWith(vowel)) {
             str = str + "way";
             return str;
-        } else {
-            return str;
         }
-    }
+    });
+    return str;
     // translates string parameter into pig latin
 }
 
