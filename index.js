@@ -1,9 +1,16 @@
 function translate(str) {
     str = str.toLowerCase();
     const vowels = ["a", "e", "i", "o", "u"];
+    const firstVowel = 0;
     vowels.forEach(function(vowel) {
         if (str.startsWith(vowel)) {
             str = str + "way";
+        } else if (str.indexOf(vowels) > 0) {
+            firstVowel = str.indexOf(vowels);
+            const wordArray = str.split("");
+            const cons = wordArray.splice(0, firstVowel);
+            str = wordArray.push(cons);
+            return str.join("") + "ay";
         }
     });
     return str;
