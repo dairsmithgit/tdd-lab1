@@ -1,22 +1,38 @@
 function translate(str) {
     str = str.toLowerCase();
     const vowels = ["a", "e", "i", "o", "u"];
-    const firstVowel = 0;
     vowels.forEach(function(vowel) {
         if (str.startsWith(vowel)) {
             str = str + "way";
-        } else if (str.indexOf(vowels) > 0) {
-            firstVowel = str.indexOf(vowels);
-            const wordArray = str.split("");
-            const cons = wordArray.splice(0, firstVowel);
-            str = wordArray.push(cons);
-            return str.join("") + "ay";
         }
     });
+    var moveCons = "";
+    while (str.slice(0, 1).match(/[^aeiou]/)) {
+        moveCons += str.slice(0, 1);
+        str = str.slice(1, str.length);
+    }
+    str = str + moveCons + "ay";
     return str;
     // translates string parameter into pig latin
 }
 
+// function consFunction(str) {
+//     const vowels = ["a", "e", "i", "o", "u"];
+//     const wordArray = str.split("");
+//     vowels.forEach(function(vowel) {
+//         const firstVowel = wordArray.indexOf(vowel);
+//         const cons = wordArray.splice(0, firstVowel);
+//         str = wordArray.push(cons);
+//         str = str.join("");
+//         str = str + "ay";
+//         return str;
+//     });
+//     // const wordArray = str.split("");
+//     // const firstVowel = wordArray.indexOf(vowels);
+//     // const cons = wordArray.splice(0, firstVowel);
+//     // str = wordArray.push(cons);
+//     // return str.join("") + "ay";
+// }
 
 
 
