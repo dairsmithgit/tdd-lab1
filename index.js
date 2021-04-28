@@ -14,6 +14,7 @@ function translate(str) {
       str = str.slice(1, str.length);
     }
     str = str + moveCons + "ay";
+    return str;
   }
   return str;
   // translates string parameter into pig latin
